@@ -140,13 +140,13 @@ Medium-term positioning (1-3 months) aligns with the current technical structure
 ## Visualizations
 
 ### Volume History
-![Volume History](output/charts/LLY_volume_history.png)
+![Volume History](../output/charts/LLY_volume_history.png)
 
 ### Technical Indicators
-![Technical Indicators](output/charts/LLY_technical_analysis.png)
+![Technical Indicators](../output/charts/LLY_technical_analysis.png)
 
 ### Candlestick
-![Candlestick](output/charts/LLY_candlestick.png)
+![Candlestick](../output/charts/LLY_candlestick.png)
 
 ---
 *Report generated on 2025-05-04 17:27:31*
