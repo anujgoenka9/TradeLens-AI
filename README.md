@@ -231,7 +231,7 @@ The application features a user-friendly Streamlit interface that allows users t
 ![Market Overview](<output/Frontend/Screenshot 1.png>)
 
 #### Chat Interface
-![Chat Interface](output/Frontend%20images/Screenshot%202025-05-04%20at%208.46.54%20PM.png)
+![Chat Interface](<output/Frontend/Screenshot 5.png>)
 
 #### Analysis Results
 ![Analysis Results](output/Frontend%20images/Screenshot%202025-05-04%20at%208.47.33%20PM.png)
