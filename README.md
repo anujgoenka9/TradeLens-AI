@@ -228,7 +228,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 The application features a user-friendly Streamlit interface that allows users to interact with the AI agents and view analysis results.
 
 #### Market Overview Screen
-![Market Overview](output/Frontend/Screenshot 1.png)
+![Market Overview](<output/Frontend/Screenshot 1.png>)
 
 #### Chat Interface
 ![Chat Interface](output/Frontend%20images/Screenshot%202025-05-04%20at%208.46.54%20PM.png)
