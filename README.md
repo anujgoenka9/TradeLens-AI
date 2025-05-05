@@ -227,17 +227,20 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 The application features a user-friendly Streamlit interface that allows users to interact with the AI agents and view analysis results.
 
-#### Market Overview Screen
-![Market Overview](<output/Frontend/Screenshot 1.png>)
+#### Chat Interface with Market Overview
+![Chat Interface](<output/Frontend/Screenshot 1.png>)
 
-#### Chat Interface
-![Chat Interface](<output/Frontend/Screenshot 5.png>)
+#### Market Overview
+![Market Analysis](<output/Frontend/Screenshot 3.png>)
 
-#### Analysis Results
-![Analysis Results](output/Frontend%20images/Screenshot%202025-05-04%20at%208.47.33%20PM.png)
+#### News and Sentiment Analysis Results
+![Analysis Results](<output/Frontend/Screenshot 7.png>)
 
-#### Strategy Recommendations
-![Strategy Recommendations](output/Frontend%20images/Screenshot%202025-05-04%20at%208.48.12%20PM.png)
+#### Charts
+![Charts](<output/Frontend/Screenshot 12.png>)
+
+#### Structured Output
+![Download Report](<output/Frontend/Screenshot 13.png>)
 
 ### Example Visualizations
 
