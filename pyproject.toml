@@ -1,0 +1,61 @@
+[project]
+name = "business_intelligence_agent"
+version = "0.1.0"
+description = "A CrewAI-based market analysis system"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"},
+]
+dependencies = [
+    "chromadb>=0.5.23",
+    "crewai[tools]>=0.117.1,<1.0.0",
+    "curl-cffi>=0.10.0",
+    "dash>=3.0.4",
+    "fastapi>=0.115.12",
+    "fastmcp>=2.2.5",
+    "groq>=0.24.0",
+    "langchain>=0.3.24",
+    "langchain-anthropic>=0.3.12",
+    "matplotlib>=3.10.1",
+    "mcp[cli]>=1.6.0",
+    "numpy>=2.2.5",
+    "openai>=1.76.0",
+    "pandas>=2.2.3",
+    "plotly>=6.0.1",
+    "python-dotenv>=1.1.0",
+    "scikit-learn>=1.6.1",
+    "seaborn>=0.13.2",
+    "statsmodels>=0.14.4",
+    "streamlit>=1.44.1",
+    "uvicorn>=0.34.2",
+    "yfinance>=0.2.57",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[project.scripts]
+run_crew = "business_intelligence_agent.main:run"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/business-intelligence-agent"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+package-type = "application"
+
+[tool.crewai]
+name = "Market Analysis Crew"
+description = "A crew for comprehensive stock market analysis"
+temperature = 0.7
+verbose = true
+max_tokens = 4000
+model = "claude-3-5-sonnet-20240620"
+
+[tool.crewai.agents]
+config_file = "src/business_intelligence_agent/config/agents.yaml"
+
+[tool.crewai.tasks]
+config_file = "src/business_intelligence_agent/config/tasks.yaml"

@@ -1,0 +1,129 @@
+market_analysis_task:
+  description: >
+    Perform comprehensive market analysis for {symbol} over {period}.
+    Current Data (as of {analysis_date}):
+    - Current Price: ${current_price:.2f}
+    - Previous Close: ${previous_close:.2f}
+    - Change: ${change:+.2f} ({change_percent:+.2f}%)
+    - Volume: {volume:,}
+
+    You are encouraged to use MCP tools to fetch additional data as needed:
+    - Use get_historical_analysis for advanced metrics and technical indicators
+    - Use get_stock_data for latest price information if needed
+    - Use get_market_overview to contextualize within broader market
+
+    Focus on:
+    1. Price trends and key support/resistance levels (calculate and provide SPECIFIC price levels)
+    2. Volume analysis and patterns (compare current volume to historical averages)
+    3. Technical indicators (calculate MA, RSI, MACD with SPECIFIC values)
+    4. Chart patterns and trading signals (identify specific patterns with price projections)
+    5. Market context and sector performance (compare to relevant indices/ETFs)
+
+    Your analysis should be QUANTITATIVE and SPECIFIC, not generic. Include actual calculations,
+    price levels, and metrics whenever possible.
+  expected_output: >
+    A comprehensive market analysis report including technical analysis, price patterns,
+    and identified trading opportunities with specific numerical values and calculations.
+  agent: market_analyst
+  context: []
+  config:
+    verbose: true
+    allow_delegation: false
+    tools: []
+
+news_analysis_task:
+  description: >
+    Analyze news and sentiment impact for {symbol}.
+    
+    You are encouraged to use the get_market_news MCP tool to fetch the most recent news articles 
+    if you need additional or more recent data than what has been provided.
+    
+    Your task is to provide a CONCISE SUMMARY of recent news, NOT just a list of articles.
+    
+    Focus on:
+    1. Key themes and topics across recent news (past week)
+    2. Overall sentiment trends (positive/negative/neutral) - QUANTIFY the sentiment with numerical analysis
+    3. Major announcements or events affecting the company - PRIORITIZE by potential market impact
+    4. How news correlates with recent price movements - ANALYZE timing of news vs. price changes
+    5. Industry-wide trends mentioned in the articles - COMPARE with competitors or sector news
+    
+    Structure your response as:
+    - Executive Summary (2-3 sentences on overall news sentiment with quantitative measure)
+    - Key Themes (bullet points of main topics with frequency analysis)
+    - Major Events (brief description of significant developments with impact assessment)
+    - Sentiment Analysis (detailed breakdown of positive/negative news patterns)
+    - Price Impact (correlation analysis between news releases and price action)
+    
+    Include specific mentions of the most impactful news stories and quantify their potential effect.
+  expected_output: >
+    A concise, focused summary of recent news trends and sentiment, with quantitative analysis of potential market impact 
+    and correlation to price movements - NOT a list of individual articles.
+  agent: news_analyst
+  context: []
+  config:
+    verbose: true
+    allow_delegation: false
+    tools: []
+
+strategy_synthesis_task:
+  description: >
+    Synthesize analysis and develop a DETAILED and SPECIFIC investment strategy for {symbol}.
+    
+    CRITICAL: You MUST explicitly incorporate BOTH the market analysis AND news analysis results from the previous tasks. 
+    Your strategy will be rejected if it doesn't directly reference specific findings from both analyses.
+    
+    Your task is to create an actionable investment strategy that is SPECIFIC to this stock, NOT a generic recommendation.
+    
+    Integrate and analyze:
+    1. Technical indicators and market analysis findings (price patterns, support/resistance levels) - USE THE EXACT NUMBERS
+       from the market analysis, including price targets, moving averages, and other technical indicators.
+    
+    2. News sentiment and recent developments - CITE SPECIFIC NEWS ITEMS that support your thesis, including
+       dates, sources, and direct quotes when relevant. Explain how each key news item impacts your strategy.
+    
+    3. Detailed risk assessment - QUANTIFY RISKS where possible (probability and potential impact), separating 
+       technical risks from fundamental/news-based risks.
+    
+    4. Concrete price targets - SHOW YOUR CALCULATIONS for how you derived entry points, stop-loss levels, and profit targets.
+       These should reference both technical levels and potential catalysts from news.
+    
+    5. Timeframe recommendations - JUSTIFY with specific technical patterns and news catalysts or upcoming events.
+    
+    Structure your response using these EXACT sections:
+    
+    ## Investment Thesis
+    [Provide 2-3 paragraphs on why someone would invest in this specific stock, including BOTH technical patterns AND recent news events]
+    
+    ## Technical Analysis Summary
+    [Summarize key technical indicators with EXACT VALUES and what they suggest specifically for this stock]
+    
+    ## News Impact Assessment
+    [Analyze how specific news items affect the investment outlook, with DIRECT CITATIONS from the news analysis]
+    
+    ## Risk Assessment
+    [List 3-5 specific risks with PROBABILITY and POTENTIAL IMPACT]
+    
+    ## Strategy Recommendation
+    [State whether to BUY, SELL, or HOLD with specific reasoning that references BOTH technical AND news factors]
+    
+    ## Price Targets
+    - Entry point: $XX.XX - $XX.XX [with explanation of how derived]
+    - Stop-loss: $XX.XX [with explanation of why this level]
+    - Profit target: $XX.XX [with explanation of why this level]
+    - Risk/reward ratio: X:X [calculated from the above]
+    
+    ## Timeframe
+    [State recommended investment timeframe with specific catalysts/events that fit this timeline]
+    
+    Your final strategy MUST BE consistent with both the technical analysis and news sentiment. If there are 
+    contradictions between them, address this explicitly and explain which factors carry more weight in your decision.
+  expected_output: >
+    A detailed, stock-specific investment strategy with explicit numerical values, specific cited sources,
+    and precise calculations that demonstrate how you arrived at your recommendations.
+  agent: strategy_synthesizer
+  context: []
+  config:
+    verbose: true
+    allow_delegation: false
+    tools: []
+  output_file: output/market_research.md
